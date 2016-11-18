@@ -23,12 +23,13 @@ public class EnterAnExpense extends JPanel{
    private JLabel enterExpense = new JLabel("Enter an expense amount: ");
     //private JLabel enterDescription = new JLabel("Enter the description: ", JLabel.EAST );
  
-    public static JTextField amountField = new JTextField();
-    public static JTextField DescriptionField = new JTextField("Enter a description");
+    public JTextField amountField = new JTextField();
+    public JTextArea DescriptionField = new JTextArea("Enter an expense description");
     
     public JButton btnSubmit = new JButton("Submit");
     
     private JLabel chooseOption = new JLabel("Choose the appropriate category: ", JLabel.CENTER);
+   
     
     public JRadioButton foodButton = new JRadioButton("Food");
     public JRadioButton rentButton = new JRadioButton("Rent");
@@ -50,7 +51,7 @@ public class EnterAnExpense extends JPanel{
        add(enterExpense);
         amountField.setPreferredSize( new Dimension( 200, 24 ) );
         add(amountField);
-       // add(enterADescription);
+        
         add(chooseOption);
         add(btnSubmit);
         add(foodButton);
@@ -65,6 +66,9 @@ public class EnterAnExpense extends JPanel{
         group.add(foodButton);
         group.add(rentButton);
         group.add(leisureButton);     
+        
+        add(DescriptionField);
+        DescriptionField.setPreferredSize(new Dimension(550, 150));
     }
 
   

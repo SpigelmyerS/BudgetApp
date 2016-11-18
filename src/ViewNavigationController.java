@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  * @author Suzanne
  */
 public class ViewNavigationController implements ActionListener {
-    MainView mainView = new MainView();
+       MainView mainView = new MainView();
     
     
     
@@ -24,6 +24,7 @@ public class ViewNavigationController implements ActionListener {
         mainView.nav.btnHome.addActionListener(this);
         mainView.nav.btnEnterBudget.addActionListener(this);
         mainView.nav.btnEnterExpense.addActionListener(this);
+        mainView.nav.btnViewReport.addActionListener(this);
         
     }
     
@@ -32,8 +33,10 @@ public class ViewNavigationController implements ActionListener {
         
         mainView.remove(mainView.enterBudget);
         mainView.remove(mainView.titlePane);
-        mainView.remove(mainView.budgetPane);
+        mainView.remove(mainView.currentBudgetPanel);
         mainView.remove(mainView.Expense);
+        mainView.remove(mainView.reportView);
+        //mainView.remove(mainView)
         mainView.repaint();
         mainView.revalidate();
         
@@ -49,7 +52,7 @@ public class ViewNavigationController implements ActionListener {
         if(obj == mainView.nav.btnHome)
         {
             RemovePanels();
-            mainView.add(mainView.budgetPane);
+            mainView.add(mainView.currentBudgetPanel);
             
             mainView.repaint();
             mainView.revalidate();
@@ -65,13 +68,21 @@ public class ViewNavigationController implements ActionListener {
         }
         if (obj == mainView.nav.btnEnterExpense)
         {
-        RemovePanels();
-        mainView.add(mainView.Expense,"Center");
-        
-        mainView.repaint();
-        mainView.revalidate();
+            RemovePanels();
+            mainView.add(mainView.Expense,"Center");
+
+            mainView.repaint();
+            mainView.revalidate();
         }
-        //if ()
+        if (obj == mainView.nav.btnViewReport)
+        {
+            RemovePanels();
+            mainView.add(mainView.reportView, "Center");
+            
+            mainView.repaint();
+            mainView.revalidate();
+        }
+        
         
     }
     

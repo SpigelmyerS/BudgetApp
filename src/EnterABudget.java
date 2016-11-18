@@ -29,13 +29,14 @@ public class EnterABudget extends JPanel{
     public JRadioButton rentButton = new JRadioButton("Rent");
     public JRadioButton leisureButton = new JRadioButton("Leisure");
     private ButtonGroup group;
+    public JComboBox budgetCategories; 
     
     
     public EnterABudget()
     {
         super();
         
-        
+        budgetCategories= new JComboBox();
         amountField.setColumns(10);
         //amountField.addPropertyChangeListener(, this);
 
@@ -48,18 +49,20 @@ public class EnterABudget extends JPanel{
         //add(enterADescription);
         add(chooseOption);
         add(btnSubmit);
-        add(foodButton);
+        add(budgetCategories);
+        
+        /*add(foodButton);
         add(rentButton);
-        add(leisureButton);
+        add(leisureButton);*/
         setBackground(Color.LIGHT_GRAY);
         
         //descriptionField.setPreferredSize( new Dimension( 200, 24 ) );
         //add(descriptionField);
         
-        group = new ButtonGroup();
+       /* group = new ButtonGroup();
         group.add(foodButton);
         group.add(rentButton);
-        group.add(leisureButton);        
+        group.add(leisureButton);   */     
         
         
         //foodButton.addActionListener(this);

@@ -22,12 +22,16 @@ public class ButtonOptionsPanelController implements ActionListener{
    public void AddActionListeners()
    {
         optionsPanel.bills.addActionListener(this);
-        optionsPanel.groceries.addActionListener(this);
+        optionsPanel.food.addActionListener(this);
         optionsPanel.leisure.addActionListener(this);
    }
    public void actionPerformed(ActionEvent e)
     {
         Object obj = e.getSource();
+        if(obj == optionsPanel.food)
+        {
+         
+        }
         //Buttons will do action here
         //Click of buttons will display different budget category amounts
         

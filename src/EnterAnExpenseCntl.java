@@ -11,57 +11,53 @@ import java.awt.event.ActionListener;
  */
 public class EnterAnExpenseCntl implements ActionListener{
     EnterAnExpense Expense;
-    CurrentBudgetPanel Panel;
-    
-    EnterAnExpenseCntl( EnterAnExpense Expense, CurrentBudgetPanel Panel){
+    CurrentBudgetPanel budgetPanel;
+    Double amountExpended;
+    EnterAnExpenseCntl( EnterAnExpense Expense, CurrentBudgetPanel budgetPanel){
     
        this.Expense = Expense;
-       this.Panel = Panel;
-      
+       this.budgetPanel = budgetPanel;
+       
+       
+       
        
         
          Expense.btnSubmit.addActionListener(this);
          Expense.foodButton.addActionListener(this);
          Expense.rentButton.addActionListener(this);
          Expense.leisureButton.addActionListener(this);
+         
+         
     }
     
-    public void actionPerformed(ActionEvent e)
+    public void actionPerformed(ActionEvent d)
     {
-        Object obj = e.getSource();
+        Object obj = d.getSource();
         
-        if(obj ==  Expense.btnSubmit)
+       /* if(obj ==  Expense.btnSubmit && Expense.foodButton.isSelected())
         { 
             System.out.println("Button operational");
-           
-                try
-                {
-                    Double amountValue;
-                    amountValue = Double.parseDouble( EnterABudget.amountField.getText()); 
-                    Panel.budgetAmount = amountValue.toString();
-                    Panel.currentBudget.setText("This is your current budget: " + Panel.budgetAmount);
-                  
-                    
-                }
-                catch(Exception exec)
-                {
-                    
-                    System.out.println("Please enter an amount");
-                    
-                }
+
+            
+            amountExpended = Double.parseDouble(Expense.amountField.getText()); 
+            budgetPanel.FoodAmount = budgetPanel.FoodAmount - amountExpended; 
+            budgetPanel.FoodLabel.setText("Food Amount Remaining: " + budgetPanel.FoodAmount.toString() +
+           "\n Total Budget: " + budgetPanel.FoodTotal.toString());           
         }
-            if(obj ==  Expense.foodButton)
-            {
-                System.out.println("Food Selected");
-            }
-             if(obj ==  Expense.leisureButton)
-            {
-                System.out.println("Leisure Selected");
-            }
-              if(obj ==  Expense.rentButton)
-            {
-                System.out.println("Rent Selected");
-            }
+         if(obj ==  Expense.btnSubmit && Expense.leisureButton.isSelected())
+        { 
+            amountExpended = Double.parseDouble(Expense.amountField.getText());
+            budgetPanel.LeisureAmount = budgetPanel.LeisureAmount - amountExpended; 
+            budgetPanel.LeisureLabel.setText("Leisure Amount Remaining: " + budgetPanel.LeisureAmount.toString() +
+           "\n Total Budget: " + budgetPanel.LeisureTotal.toString());
+        }
+         if(obj ==  Expense.btnSubmit && Expense.rentButton.isSelected())
+        { 
+             amountExpended = Double.parseDouble(Expense.amountField.getText()); 
+              budgetPanel.RentAmount = budgetPanel.RentAmount - amountExpended; 
+            budgetPanel.RentLabel.setText("Rent Amount Remaining: " + budgetPanel.RentAmount.toString() +
+           "\n Total Budget: " + budgetPanel.RentTotal.toString());
+        }*/
 
             }
     

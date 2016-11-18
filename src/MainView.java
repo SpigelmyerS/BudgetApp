@@ -23,7 +23,8 @@ public class MainView extends JFrame {
     PanelBudget budgetPane;
     NavigationUI nav;
     EnterAnExpense Expense;
-        
+    ReportView reportView; 
+    CurrentBudgetPanel currentBudgetPanel;
     //NavigationUI  side panel filled with navigation buttons 
     //BudgetAmountView main panel that will display budgets and information user first sees.
     MainView()
@@ -41,15 +42,18 @@ public class MainView extends JFrame {
         //enterBudget  = new EnterABudget();
         nav = new NavigationUI();
         enterBudget = new EnterABudget();
-        budgetPane = new PanelBudget();
+        //budgetPane = new PanelBudget();
         Expense = new EnterAnExpense();
+        currentBudgetPanel = new CurrentBudgetPanel();
+        reportView = new ReportView();
         getContentPane().add(nav,"West");
-        getContentPane().add(budgetPane, "Center"); 
+        getContentPane().add(currentBudgetPanel, "Center"); 
+      
         //getContentPane().add(enterBudget, "South");
         //getContentPane().add()
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize (750, 750);
+        setSize (500, 500);
         setVisible(true);
     }
     

@@ -16,7 +16,7 @@ import javax.swing.JPanel;
  * @author jeffreyyeager
  */
 public class ButtonOptionsPanel extends JPanel{
-    JButton groceries = new JButton("Groceries");
+    JButton food = new JButton("Food");
     JButton leisure = new JButton("Leisure");
     JButton bills = new JButton("Bills");
     
@@ -25,7 +25,7 @@ public class ButtonOptionsPanel extends JPanel{
         super();
         GridLayout gr = new GridLayout(3,1);
         setLayout(gr);
-        add(groceries);
+        add(food);
         add(leisure);
         add(bills);
     }

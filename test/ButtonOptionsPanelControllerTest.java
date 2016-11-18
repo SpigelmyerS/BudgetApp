@@ -50,6 +50,7 @@ public class ButtonOptionsPanelControllerTest {
         // TODO review the generated test code and remove the default call to fail.
         assertTrue(true);
     }
+    
 
     /**
      * Test of actionPerformed method, of class ButtonOptionsPanelController.

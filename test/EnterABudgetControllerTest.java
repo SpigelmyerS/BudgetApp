@@ -47,8 +47,9 @@ public class EnterABudgetControllerTest {
         MainView mainView = new MainView();
         EnterABudget enterBudget = new EnterABudget();
         CurrentBudgetPanel currentBudgetPanel = new CurrentBudgetPanel();
+        EnterABudgetModel budgetModel = new EnterABudgetModel();
         
-        EnterABudgetController instance = new EnterABudgetController(enterBudget, currentBudgetPanel);
+        EnterABudgetController instance = new EnterABudgetController(enterBudget, currentBudgetPanel, budgetModel);
         
         String expResult = "Please enter an amount";
         String result = instance.CheckForMoneyAmount();
